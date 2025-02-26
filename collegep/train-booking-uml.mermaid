@@ -1,0 +1,79 @@
+classDiagram
+    class Passenger {
+        +int passengerId
+        +String name
+        +String email
+        +String phone
+        +String password
+        +register()
+        +login()
+        +searchTrain()
+        +bookTicket()
+        +orderFood()
+        +cancelBooking()
+        +trackOrder()
+    }
+
+    class Admin {
+        +int adminId
+        +String name
+        +String email
+        +String password
+        +addTrainSchedule()
+        +modifyTrainSchedule()
+        +removeTrainSchedule()
+        +updateFoodMenu()
+        +viewReports()
+        +manageBookings()
+        +handleSupportRequests()
+    }
+
+    class Train {
+        +int trainId
+        +String trainName
+        +String sourceStation
+        +String destinationStation
+        +DateTime departureTime
+        +DateTime arrivalTime
+        +int seatAvailability
+        +updateAvailability()
+        +getSchedule()
+    }
+
+    class FoodOrder {
+        +int orderId
+        +int trainId
+        +int passengerId
+        +List menuItems
+        +float totalAmount
+        +String status
+        +placeOrder()
+        +cancelOrder()
+        +updateOrderStatus()
+    }
+
+    class Booking {
+        +int bookingId
+        +int passengerId
+        +int trainId
+        +String seatClass
+        +DateTime bookingDate
+        +String status
+        +confirmBooking()
+        +cancelBooking()
+    }
+
+    class AdminDashboard {
+        +int dashboardId
+        +viewAnalytics()
+        +manageAccounts()
+    }
+
+    Passenger "1" -- "*" Booking : makes
+    Passenger "1" -- "*" FoodOrder : creates
+    Admin -- Train : manages
+    Admin -- FoodOrder : manages
+    Admin -- Booking : manages
+    Train "1" -- "*" Booking : has
+    Train "1" -- "*" FoodOrder : supports
+    Admin "1" -- "1" AdminDashboard : uses

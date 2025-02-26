@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC Booking Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-image: url('train.jpg'); /* Replace with train background image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .content p {
+            font-size: 18px;
+        }
+
+        .form-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-size: 14px;
+            color: #333;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        form .checkbox-group label {
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        form .checkbox-group input {
+            margin-right: 5px;
+        }
+
+        form .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form .buttons button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form .buttons .search-btn {
+            background-color: #ff6f00;
+            color: white;
+        }
+
+        form .buttons .easy-booking-btn {
+            background-color: #003366;
+            color: white;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        footer a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="IRCTC Logo"> <!-- Replace with your logo -->
+            <span>INDIAN RAILWAYS</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">LOGIN</a>
+            <a href="#">REGISTER</a>
+            <a href="#">AGENT LOGIN</a>
+            <a href="#">CONTACT US</a>
+            <a href="#">HELP & SUPPORT</a>
+            <a href="#">DAILY DEALS</a>
+            <a href="#">ALERTS</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>INDIAN RAILWAYS</h1>
+        <p>Safety | Security | Punctuality</p>
+    </div>
+
+    <div class="form-container">
+        <h2>BOOK TICKET</h2>
+        <form>
+            <label for="from">From</label>
+            <input type="text" id="from" placeholder="From">
+
+            <label for="to">To</label>
+            <input type="text" id="to" placeholder="To">
+
+            <label for="date">Date</label>
+            <input type="date" id="date">
+
+            <label for="class">Class</label>
+            <select id="class">
+                <option value="all">All Classes</option>
+                <option value="sleeper">Sleeper</option>
+                <option value="ac">AC</option>
+            </select>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Person With Disability Concession</label>
+                <label><input type="checkbox"> Flexible With Date</label>
+                <label><input type="checkbox"> Train with Available Berth</label>
+                <label><input type="checkbox"> Railway Pass Concession</label>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="search-btn">Search</button>
+                <button type="button" class="easy-booking-btn">Easy Booking on AskDISHA</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        Customers can use enhanced interface for their IRCTC related queries!!
+        <a href="https://equery.irctc.co.in/">https://equery.irctc.co.in/</a>
+        <br>
+        Customer Care Numbers: 14646 / 08044647999 / 08035734999 (Language: Hindi & English)
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+stateDiagram-v2
+    [*] --> Passenger_Idle : Initial State
+    [*] --> Admin_Idle : Initial State
+    [*] --> System_WaitingForInput : Initial State
+
+    state Passenger {
+        Passenger_Idle --> Passenger_SearchTrain : Start Search
+        Passenger_SearchTrain --> Passenger_SelectTrain : Select Train
+        Passenger_SelectTrain --> Passenger_BookTicket : Proceed to Booking
+        Passenger_BookTicket --> Passenger_OrderFood : Optional Food Order
+        Passenger_OrderFood --> Passenger_ReceiveUpdates : Confirm Order
+        Passenger_SelectTrain --> Passenger_ReceiveUpdates : Direct Ticket Booking
+        Passenger_ReceiveUpdates --> Passenger_CancelTicket : Cancellation Option
+        Passenger_CancelTicket --> Passenger_Logout : Complete Cancellation
+        Passenger_ReceiveUpdates --> Passenger_Logout : End Session
+    }
+
+    state Admin {
+        Admin_Idle --> Admin_ManageTrainSchedules : Modify Schedules
+        Admin_Idle --> Admin_ManageFoodMenu : Update Food Options
+        Admin_ManageTrainSchedules --> Admin_ViewBookings : Check Bookings
+        Admin_ManageFoodMenu --> Admin_ViewBookings : Check Orders
+        Admin_ViewBookings --> Admin_GenerateReports : Create Reports
+    }
+
+    state System {
+        System_WaitingForInput --> System_SearchResultsDisplayed : Search Triggered
+        System_SearchResultsDisplayed --> System_ConfirmBooking : Booking Request
+        System_ConfirmBooking --> System_NotifyUsers : Booking Confirmed
+        System_NotifyUsers --> System_UpdateRecords : Update Database
+    }
+
+    note right of Passenger_SearchTrain
+        Input: Source, Destination, Date
+    end note
+
+    note right of Passenger_BookTicket
+        Includes Payment Processing
+    end note
+
+    note right of Admin_ManageTrainSchedules
+        Add/Modify/Remove Schedules
+    end note

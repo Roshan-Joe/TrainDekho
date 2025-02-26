@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC eQuery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-section {
+            flex: 1;
+            background: url('file:///D:/collegep/Old%20Train%20by%20Renatha-Gomes%20on%20DeviantArt.jpg') no-repeat center center/cover; /* Replace with train image URL */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .quote {
+            position: relative;
+            font-size: 36px;
+            text-align: center;
+            color: #dcdcdc;
+            font-weight: bold;
+        }
+
+        .right-section {
+            flex: 1;
+            background-color: #292929;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .right-section h1 {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .login-box {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .login-box h2 {
+            font-size: 20px;
+            color: #ff6f00;
+            margin-bottom: 15px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff6f00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            opacity: 0.9;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+            text-align: center;
+        }
+
+        .footer-text a {
+            color: #ff6f00;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-section">
+        <div class="overlay"></div>
+        <div class="quote">"Lifeline of the Nation"</div>
+    </div>
+    <div class="right-section">
+        <h1>Welcome To IRCTC - eQuery</h1>
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="text" placeholder="Enter Mobile Number">
+            <div style="text-align: center; color: #ccc; margin: 10px 0;">or</div>
+            <input type="email" placeholder="Enter Email ID">
+            <button>Submit</button>
+        </div>
+        <div class="footer-text">
+            For swifter resolution of your query you may call our 24-hour Customer Care: 
+            <a href="tel:14646">14646</a> / 
+            <a href="tel:08035734999">08035734999</a> / 
+            <a href="tel:08044647999">08044647999</a>
+        </div>
+    </div>
+</body>
+</html>

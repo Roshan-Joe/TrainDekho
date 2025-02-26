@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .booking-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .swap-icon {
+            text-align: center;
+            margin: 10px 0;
+            color: #1a237e;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .search-btn {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .booking-btn {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #1a237e;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <h1>BOOK TICKET</h1>
+        
+        <div class="input-group">
+            <input type="text" id="from" placeholder="From">
+        </div>
+
+        <div class="swap-icon">
+            ⇅
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="to" placeholder="To">
+        </div>
+
+        <div class="input-group">
+            <input type="date" id="journey-date">
+        </div>
+
+        <div class="input-group">
+            <select id="class">
+                <option value="">All Classes</option>
+                <option value="1A">First AC</option>
+                <option value="2A">Second AC</option>
+                <option value="3A">Third AC</option>
+                <option value="SL">Sleeper</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <select id="quota">
+                <option value="GENERAL">GENERAL</option>
+                <option value="TATKAL">TATKAL</option>
+                <option value="LADIES">LADIES</option>
+            </select>
+        </div>
+
+        <div class="checkbox-group">
+            <div class="checkbox-item">
+                <input type="checkbox" id="disability">
+                <label for="disability">Person With Disability Concession</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="flexible">
+                <label for="flexible">Flexible With Date</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="berth">
+                <label for="berth">Train with Available Berth</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="railway-pass">
+                <label for="railway-pass">Railway Pass Concession</label>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="search-btn">Search</button>
+            <button class="booking-btn">Easy Booking on AskDISHA</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Customers can use enhanced interface for their IRCTC related queries!! <a href="https://equery.irctc.co.in">https://equery.irctc.co.in</a></p>
+        <p>Customer Care Numbers : 14646/08044647999 /08035734999 (Language: Hindi & English)</p>
+    </div>
+
+    <script>
+        // Set default date to today
+        document.getElementById('journey-date').valueAsDate = new Date();
+
+        // Swap stations functionality
+        document.querySelector('.swap-icon').addEventListener('click', function() {
+            const fromInput = document.getElementById('from');
+            const toInput = document.getElementById('to');
+            const temp = fromInput.value;
+            fromInput.value = toInput.value;
+            toInput.value = temp;
+        });
+
+        // Search button functionality
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const date = document.getElementById('journey-date').value;
+            const travelClass = document.getElementById('class').value;
+            const quota = document.getElementById('quota').value;
+
+            if (!from || !to || !date) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // Here you can add your search logic
+            console.log('Searching for trains with following criteria:', {
+                from,
+                to,
+                date,
+                travelClass,
+                quota
+            });
+        });
+    </script>
+</body>
+</html> 

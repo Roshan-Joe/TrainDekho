@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .booking-section {
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .booking-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 40%;
+        }
+
+        .booking-form h2 {
+            margin-top: 0;
+        }
+
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .booking-form button {
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .train-image {
+            width: 55%;
+        }
+
+        .train-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: orange;
+            text-decoration: none;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="file:///D:/collegep/TRAIN%20MANIA%20YOU%20TUBE%20CHANNEL%20LOGO.png" alt="IRCTC Logo" style="height: 40px;">
+        </div>
+        <nav>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+            <a href="#">Help & Support</a>
+            <a href="#">Daily Deals</a>
+        </nav>
+    </header>
+
+    <div class="booking-section">
+        <div class="booking-form">
+            <h2>Book Ticket</h2>
+            <form>
+                <input type="text" placeholder="From" required>
+                <input type="text" placeholder="To" required>
+                <input type="date" required>
+                <select>
+                    <option value="general">General</option>
+                    <option value="sleeper">Sleeper</option>
+                    <option value="ac">AC</option>
+                </select>
+                <div class="checkbox-group">
+                    <label><input type="checkbox"> Person With Disability Concession</label>
+                    <label><input type="checkbox"> Flexible With Date</label>
+                    <label><input type="checkbox"> Train with Available Berth</label>
+                    <label><input type="checkbox"> Railway Pass Concession</label>
+                </div>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="train-image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Vande_Bharat_Express_Train.jpg/1280px-Vande_Bharat_Express_Train.jpg" alt="Train Image">
+        </div>
+    </div>
+
+    <footer>
+        <p>Have you not found the right one? Find a service suitable for you <a href="#">here</a>.</p>
+        <p>Customer Care Numbers: 14646 / 08044647999 / 08035734999</p>
+    </footer>
+</body>
+</html>
